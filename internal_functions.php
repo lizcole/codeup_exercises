@@ -16,14 +16,8 @@ $array = [1, 2, 3];
 // 	echo '$something is SET' . PHP_EOL;
 // }
 
-$array = serialize($array);
 
-	echo $array . PHP_EOL;
-
-$array = unserialize($array);
-
-	echo $array . PHP_EOL;
-
+			// OR // 
 
 
 function check_set_or_empty($value) {
@@ -38,4 +32,13 @@ function check_set_or_empty($value) {
 
 echo check_set_or_empty($nothing) . PHP_EOL;
 echo check_set_or_empty($something) . PHP_EOL;
+
+
+$array = serialize($array);
+
+	echo $array . PHP_EOL;
+
+$array = unserialize($array);
+
+	echo $array . PHP_EOL;
 
