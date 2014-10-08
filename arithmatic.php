@@ -1,34 +1,80 @@
 <?php
 
 function add($a, $b) {
-    echo $a + $b . PHP_EOL;
+    
+    if(checkInput($a, $b)) {
+		return $a + $b;
+	}
+	else {
+		return genError($a, $b);
+	}
 }
 
-add(4, 5);
+echo add(4, ducky) . PHP_EOL;
 
 function subtract($a, $b) {
-    echo $a - $b . PHP_EOL;
+
+	if(checkInput($a, $b)) {
+    	return $a - $b;
+	}
+	else {
+		return genError($a, $b);
+	}
 }
 
-subtract(4, 5);
+echo subtract(4, 5) . PHP_EOL;
 
 function multiply($a, $b) {
-	echo $a * $b . PHP_EOL;	
+	if(checkInput($a, $b)) {
+	return $a * $b;	
+	}
+	else {
+		echo genError($a, $b);
+	}
 }
 
-multiply(4, 5);
+echo multiply(4, 5) . PHP_EOL;
 
 function divide($a, $b) {
-    echo $a / $b . PHP_EOL;
+   if($b == 0) {
+		return "Error: Please enter number higher than 0 to divide by";
+		return false;
+	}
+	elseif(checkInput($a, $b)) {
+    	return $a / $b;
+    }
+	else {
+		echo genError($a, $b);
+	}
+
 }
 
-divide(4, 5);
+echo divide(0, 90) . PHP_EOL;
 
 function modulus($a, $b) {
-	echo $a % $b . PHP_EOL;
+	if(checkInput($a, $b)) {
+		return ($a % $b);
+	} else {
+		echo genError($a, $b);
+	}	
 }
 
-modulus(5, 4);
+echo modulus(5, 'ducky') . PHP_EOL;
+
+function checkInput($a, $b){
+	if( is_numeric($a) && is_numeric($b)) {
+    	return true;
+    }
+	else {
+		return false;
+	}
+}
+
+function genError($a, $b) {
+	return "Error: Please input only numeric values. Note you entered $a for \$a, and $b for \$b.";
+}
+
+
 
 
 ?>
